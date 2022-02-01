@@ -1,15 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import reportWebVitals from "./reportWebVitals";
+
+//Material UI
+import { createTheme, ThemeProvider } from "@mui/material";
+
+const theme = createTheme({
+  typography: {
+    fontFamily: "Ubuntu",
+  },
+  palette: {
+    primary: {
+      main: "#B10C0C",
+    },
+    secondary: {
+      main: "#000000",
+    },
+  },
+});
 
 ReactDOM.render(
-  <React.StrictMode>
+  <ThemeProvider theme={theme}>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </ThemeProvider>,
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
