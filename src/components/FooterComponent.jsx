@@ -1,5 +1,8 @@
 import React from "react";
 
+//React Router Dom
+import { useNavigate } from "react-router-dom";
+
 //Icons
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
@@ -14,11 +17,18 @@ import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import Stack from "@mui/material/Stack";
+import Box from "@mui/material/Box";
 import { useTheme } from "@emotion/react";
 
 const FooterComponent = () => {
   //variables
   const theme = useTheme();
+  const navigate = useNavigate();
+
+  const changePage = (url) => {
+    navigate(url);
+  };
+
   return (
     <AppBar
       position="relative"
@@ -71,8 +81,9 @@ const FooterComponent = () => {
                           color: theme.palette.primary.main,
                         },
                       }}
+                      onClick={() => changePage(link.link)}
                     >
-                      {link}
+                      {link.name}
                     </Button>
                   ));
                 } else {
@@ -108,8 +119,9 @@ const FooterComponent = () => {
                           color: theme.palette.primary.main,
                         },
                       }}
+                      onClick={() => changePage(link.link)}
                     >
-                      {link}
+                      {link.name}
                     </Button>
                   ));
                 } else {
@@ -145,8 +157,9 @@ const FooterComponent = () => {
                           color: theme.palette.primary.main,
                         },
                       }}
+                      onClick={() => changePage(link.link)}
                     >
-                      {link}
+                      {link.name}
                     </Button>
                   ));
                 } else {
@@ -183,14 +196,17 @@ const FooterComponent = () => {
                         color: theme.palette.primary.main,
                       },
                     }}
+                    onClick={() => changePage(link.link)}
                   >
-                    {link}
+                    {link.name}
                   </Button>
                 ));
               } else {
                 return null;
               }
             })}
+            <Box sx={{ flex: "1 1 auto" }} />
+
             <Button
               variant="text"
               color="inherit"
@@ -215,24 +231,41 @@ const FooterComponent = () => {
 };
 
 const navigation = [
-  { topic: "company", links: ["About", "Jobs", "For the Record"] },
+  {
+    topic: "company",
+    links: [
+      { name: "About", link: "/about" },
+      { name: "Jobs", link: "/jobs" },
+      { name: "For the Record", link: "/for_the_artist" },
+    ],
+  },
   {
     topic: "communities",
-    links: ["For Artists", "Developers", "Advertising", "Investors", "Vendors"],
+    links: [
+      { name: "For Artists", link: "/for_artist" },
+      { name: "Developers", link: "/developers" },
+      { name: "Advertising", link: "/advertising" },
+      { name: "Investors", link: "/investors" },
+      { name: "Vendors", link: "/vendors" },
+    ],
   },
   {
     topic: "other",
-    links: ["Support", "Web Player", "Free Mobile App"],
+    links: [
+      { name: "Support", link: "/support" },
+      { name: "Web Player", link: "/web_player" },
+      { name: "Free Mobile App", link: "/free_mobile_app" },
+    ],
   },
   {
     topic: "extras",
     links: [
-      "Legal",
-      "Privacy Center",
-      "Privacy Policy",
-      "Cookies",
-      "About Ads",
-      "Additional CA Privacy Disclosures",
+      { name: "Legal", link: "/legal" },
+      { name: "Privacy Center", link: "/privacy_center" },
+      { name: "Privacy Policy", link: "/privacy_policy" },
+      { name: "Cookies", link: "/cookies" },
+      { name: "About Ads", link: "/about_ads" },
+      { name: "Additional CA Privacy Disclosures", link: "/additional" },
     ],
   },
 ];

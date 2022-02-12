@@ -12,7 +12,7 @@ import Button from "@mui/material/Button";
 const WelcomePage = () => {
   return (
     <>
-      <NavbarComponent />
+      <NavbarComponent title={"Tingoma for Emaswati"} />
       <Container
         maxWidth="xl"
         disableGutters
@@ -23,12 +23,18 @@ const WelcomePage = () => {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
+          backgroundImage: `url(https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80)`,
+          backgroundPosition: "cover",
         }}
       >
         <Typography
           variant="h2"
           color="inherit"
-          sx={{ textAlign: "center", fontWeight: 900 }}
+          sx={{
+            textAlign: "center",
+            fontWeight: 900,
+            color: "white",
+          }}
         >
           Art speaks where words are unable to explain
         </Typography>
@@ -50,9 +56,13 @@ const WelcomePage = () => {
           flexDirection: "column",
           alignItems: "start",
           justifyContent: "center",
+          backgroundImage:
+            "url(https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80)",
+          backgroundPosition: "center",
+          backgroundCover: "cover",
         }}
       >
-        <Typography variant="h3" color="inherit">
+        <Typography variant="h3" color="inherit" sx={{ color: "white" }}>
           Umculo is the language of the spirit. It opens the secret of life
           bringing peace, abolishing strife.
         </Typography>

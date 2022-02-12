@@ -9,6 +9,9 @@ import PremiumPage from "./pages/PremiumPage";
 import SignUpPage from "./SignUpPage";
 import LogInPage from "./pages/LogInPage";
 import HomePage from "./pages/HomePage";
+import ForArtistPage from "./pages/ForArtistPage";
+import UploadSinglePage from "./pages/UploadSinglePage";
+import UploadAlbumPage from "./pages/UploadAlbumPage";
 
 function App() {
   return (
@@ -19,6 +22,9 @@ function App() {
         <Route exact path="/sign_up" element={<SignUpPage />} />
         <Route exact path="/log_in" element={<LogInPage />} />
         <Route exact path="/home" element={<HomePage />} />
+        <Route exact path="/for_artist" element={<ForArtistPage />} />
+        <Route exact path="/upload_single" element={<UploadSinglePage />} />
+        <Route exact path="/upload_album" element={<UploadAlbumPage />} />
       </Routes>
     </BrowserRouter>
   );

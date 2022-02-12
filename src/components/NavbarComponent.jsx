@@ -14,7 +14,7 @@ import Button from "@mui/material/Button";
 import { useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material";
 
-const NavbarComponent = () => {
+const NavbarComponent = ({ title }) => {
   //variables
   const navigate = useNavigate();
   const theme = useTheme();
@@ -31,7 +31,7 @@ const NavbarComponent = () => {
           onClick={() => changePage("/")}
           sx={{ display: "flex", flex: 1, fontWeight: 900, cursor: "pointer" }}
         >
-          Tingoma
+          {title}
         </Typography>
         {navigation.map((nav) => (
           <Button

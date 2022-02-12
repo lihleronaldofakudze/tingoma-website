@@ -23,7 +23,7 @@ const LogInPage = () => {
   };
   return (
     <>
-      <NavbarComponent />
+      <NavbarComponent title={"Tingoma | Login"} />
       <Container
         maxWidth="sm"
         sx={{

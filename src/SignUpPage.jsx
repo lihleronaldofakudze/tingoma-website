@@ -24,7 +24,7 @@ const SignUpPage = () => {
   };
   return (
     <>
-      <NavbarComponent />
+      <NavbarComponent title={"Tingoma | Sign Up"} />
       <Container
         maxWidth="sm"
         sx={{
